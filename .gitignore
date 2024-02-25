@@ -1,0 +1,29 @@
+# Compiled Object files
+*.o
+
+# Executables
+*.exe
+
+# Build directory
+build/
+
+# Visual Studio Code specific files
+.vscode/
+
+# Clang format file
+.clang-format
+
+# macOS specific files
+.DS_Store
+
+# Editor backup files
+*~
+
+# CMake build directory
+CMakeFiles/
+
+# CMake cache
+CMakeCache.txt
+
+# CMake install manifest
+install_manifest.txt
