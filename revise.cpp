@@ -4,20 +4,6 @@ using namespace std;
 
 int main()
 {
-    // int age;
-
-    // cout << "enter your age:";
-    // cin >> age;
-
-    // if (age < 18)
-    // {
-    //     cout << "You can't drive";
-    // }
-    // else
-    // {
-    //     cout << "You can drive";
-    // }
-
     int n;
     cin >> n;
 
@@ -25,20 +11,14 @@ int main()
 
     while (i <= n)
     {
-        int j;
-        j = 1;
+        int j = 0;
         while (j <= n)
         {
-            cout << j;
+            cout << "*";
             j++;
         }
 
-     
-        cout<<endl;
-        
-
+        cout << endl;
         i++;
     }
-
-    return 0;
 }
