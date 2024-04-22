@@ -9,15 +9,14 @@ int main(){
     int card;
     card = 40;
 
+
     int my_card = card;
 
+
     int *myp;
-    myp = &card;
+    myp = &my_card;
 
-    my_card = *myp;
+    my_card = *myp; // pointer dereferance
 
-
-    printf("value of card is : %d \n", my_card);
-    printf("value of card is %p \n:", myp);
-  
+    cout<<my_card;
 }
