@@ -5,6 +5,7 @@ using namespace std;
 
 void print(){
     cout<<"kunal";
+    cout<<"kunal";
 }
 
 int sum(int a, int b){
