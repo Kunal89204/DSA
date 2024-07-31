@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "command",
+            "name": "Command configuration",
+            "program": "C:/Users/Kunal/Documents/computer science/Coding/C++/DSA/General C++/array.exe",
+        },
+        
+    ]
+}
