@@ -14,15 +14,13 @@ int binarySearch(int arr[], int size, int target)
         {
             return mid;
         }
-
-        else if (arr[mid] > target)
-        {
-            right = mid - 1;
-        }
-
-        else
+        else if (arr[mid] < target)
         {
             left = mid + 1;
+        }
+        else
+        {
+            left = mid - 1;
         }
     }
 
@@ -31,15 +29,18 @@ int binarySearch(int arr[], int size, int target)
 
 int main()
 {
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 12, 23, 45, 566};
+    int arr[] = {32, 43564, 65, 5, 54, 676, 546, 6, 5, 543, 56, 46};
     int size = sizeof(arr) / sizeof(arr[0]);
-    int target = 45;
+    int target = 32;
 
     int index = binarySearch(arr, size, target);
 
-     if (index != -1) {
-        cout << "Element found at index: " << index << endl;
-    } else {
-        cout << "Element not found." << endl;
+    if (index != -1)
+    {
+        cout << "Element found at index:" << index << endl;
+    }
+    else
+    {
+        cout<<"Element not found" << endl;
     }
 }

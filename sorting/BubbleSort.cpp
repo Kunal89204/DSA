@@ -1,32 +1,44 @@
 #include <iostream>
+
 using namespace std;
 
-void bubbleSort(int arr[], int n) {
+void bubblesort(int arr[], int n)
+{
     bool swapped;
-    for (int i = 0; i < n - 1; ++i) {
+
+    for (int i = 0; i < n - 1; ++i)
+    {
         swapped = false;
-        for (int j = 0; j < n - i - 1; ++j) {
-            if (arr[j] > arr[j + 1]) {
+
+        for (int j = 0; j < n - i - 1; ++j)
+        {
+            if (arr[j] > arr[j + 1])
+            {
                 swap(arr[j], arr[j + 1]);
                 swapped = true;
             }
         }
-        // If no two elements were swapped by inner loop, then break
-        if (!swapped) break;
+
+        if (!swapped)
+            break;
     }
 }
 
-void printArray(int arr[], int size) {
-    for (int i = 0; i < size; ++i)
-        cout << arr[i] << " ";
-    cout << endl;
+void printArray(int arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " " << endl;
+    }
 }
 
-int main() {
-    int arr[] = {64, 34, 25, 12, 22, 11, 90};
+int main()
+{
+    int arr[] = {3, 3, 235, 44, 6543, 5, 53, 53, 4, 53, 4253, 42};
     int n = sizeof(arr) / sizeof(arr[0]);
-    bubbleSort(arr, n);
-    cout << "Sorted array: \n";
+
+    bubblesort(arr, n);
+    cout<<"Sorted array"<<endl;
     printArray(arr, n);
     return 0;
 }
