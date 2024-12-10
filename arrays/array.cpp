@@ -4,16 +4,18 @@ using namespace std;
 
 int main()
 {
-    int numbers[] = {1, 5, 6, 7, 2, 3, 4};
-    int maxElement = 0;
-    int size = sizeof(numbers) / sizeof(numbers[0]);
+    int arr[] = {6,56,436,57,436,67,346,658,34,476,89};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int maxI = 0;
 
-    for (int i = 1; i < size; i++)
+    int i;
+    for (i = 1; i < size; i++)
     {
-        if (numbers[i] > maxElement)
+        if (arr[i] > arr[maxI])
         {
-            maxElement = numbers[i];
+            maxI = i;
         }
     }
-    cout << "The maximum element in the array is: " << maxElement << endl;
+
+    cout<<"The largest element is :"<<arr[maxI]<<endl;
 }
