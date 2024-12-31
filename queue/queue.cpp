@@ -1,15 +1,40 @@
 #include<iostream>
-#include<queue>
+
 using namespace std;
 
-int main(){
-    queue<int> myq;
+#define n 20;
 
-    myq.push(10);
-    myq.push(20);
-    myq.push(30);
-    myq.push(40);
+class Queue{
+    int* arr;
+    int front;
+    int back;
 
-    myq.pop();
-    cout<<myq.front()<<endl;
-}
+    public:
+    Queue() {
+        arr = new int[n];
+        front = -1;
+        back = -1;
+    }
+
+    void push(int x){
+        if(back == n-1){
+            cout<<"Queue is empty!"<<endl;
+        }
+
+        if(front == -1){
+            front = 0;
+        }
+
+        back++;
+        arr[back] = x;
+    }
+
+    void pop(){
+        if(front == -1){
+            cout<<"Queue is empty!"<<endl;
+            return;
+        }
+
+        front++;
+    }
+};

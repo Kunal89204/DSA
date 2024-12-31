@@ -8,7 +8,7 @@ class Stack {
 
     public:
     Stack(){
-        top = -1;
+        top=-1;
     }
 
     void push(int x){
@@ -20,33 +20,38 @@ class Stack {
         arr[++top] = x;
     }
 
+    void pop(){
+        if(top<=0){
+            cout<<"Stack is empty :"<<top<<endl;
+            return;
+        }
+
+        top--;
+    }
 
     int peek(){
-        if(top<0){
+        if(top<=0){
             cout<<"Stack is empty :"<<top<<endl;
             return -1;
         }
+
         return arr[top];
     }
 
 
-    void pop(){
-        if(top<0){
-            cout<<"Stack is  :"<<top<<endl;
-        }
-
-        arr[--top];
-    }
 };
 
 
-int main (){
-    Stack stack;
 
-    stack.push(10);
-    stack.push(20);
-    stack.push(30);
+int main(){
+    Stack s;
 
-    stack.pop();
-    cout<<"Top element is : "<<stack.peek()<<endl;
+    s.push(10);
+    s.push(20);
+    s.push(30);
+
+    cout<<"Top element is : "<<s.peek()<<endl; //prints 30
+
+    s.pop();
+    cout<<"Top element is : "<<s.peek()<<endl; //prints 20
 }
