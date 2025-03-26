@@ -2,20 +2,28 @@
 
 using namespace std;
 
-class Node {
-public:
+
+class node{
+    public:
     int data;
-    Node* next;
+    node* next;
 
-
-    Node(int value) {
-        data = value;
-        next = nullptr;
+    node(int val){
+        data=val;
+        next=NULL;
     }
 };
 
-int main(){
-    Node list;
+ void insertAtTail(node* &head, int val){
+    node* n = new node(val);
 
+    node* temp= head;
+
+    while (temp-> next != NULL)
+    {
+        temp = temp->next;
+    }
+
+    temp->next = n;
     
-}
+ }
