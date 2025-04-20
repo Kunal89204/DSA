@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 int binarySearch(int arr[], int size, int target)
@@ -10,31 +11,35 @@ int binarySearch(int arr[], int size, int target)
     {
         int mid = left + (right - left) / 2;
 
-        if (arr[mid] == target)
+        if (arr[mid] < target)
         {
-            return mid;
+            left = mid + 1;
         }
         else if (arr[mid] > target)
         {
             right = mid - 1;
         }
-        else if (arr[mid] < target)
+        else
         {
-            left = mid + 1;
-        }else{
-            cout << "Element not found in the array." << endl;
-            return -1;  // Element not found in the array.
+            return mid;
         }
     }
+
+    return -1;
 }
 
 int main()
 {
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27};
     int size = sizeof(arr) / sizeof(arr[0]);
-    int target = 2;
+    int target = 25;
 
-    int index = binarySearch(arr, size, target);
+    int targetIndex = binarySearch(arr, size, target);
 
-    cout<<index;
+    if (targetIndex == -1)
+    {
+        cout << "Target not found in the array";
+    }
+
+    cout << "The target is at index :" << targetIndex << " And the value is " << arr[targetIndex];
 }
