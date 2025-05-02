@@ -10,7 +10,17 @@ int main(){
 
     vector <char> arr = {'a', 'b', 'c', 'd', 'e'};
 
+    // Size of a vector
     cout<<"Size is: "<< arr.size()<<endl;
+
+    arr.push_back('2');
+
+    arr.pop_back();
+
+
+    cout<<arr.front();
+    cout<<arr.at(3);
+
 
     for(char val : arr){
         cout<<val<<endl;
