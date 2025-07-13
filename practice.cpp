@@ -1,23 +1,11 @@
 #include<iostream>
-#include<string>
+#include<vector>
 
 using namespace std;
 
- class Employee {
-        public:
-            string name;
-            int salary;
-
-            int addFunc(string name, int salary){
-                this->name = name;
-                this->salary = salary;
-            }
-    };
-
 int main(){
-   Employee kunal;
-
-   cout<<kunal.name;
-   kunal.addFunc("Kunal", 100);
+    vector <int> vec = {1,2,3,4,56,7};
+    vec.push_back(10);
+   vec.emplace_back();
 
 }
