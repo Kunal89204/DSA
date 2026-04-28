@@ -9,10 +9,10 @@ int main()
 {
     list<int> l;
     deque<int> d;
-    pair<int, int> P = {1, 5};
+    pair<int, pair<int, int>> P = {1, {1, 2}};
 
     cout << P.first << endl;
-    cout << P.second << endl;
+    cout << P.second.second << endl;
 
     l.push_back(1);
     l.push_back(2);

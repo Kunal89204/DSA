@@ -1,41 +1,51 @@
 #include <iostream>
+#include <vector>
+
 using namespace std;
 
 int binarySearch(int arr[], int size, int target)
 {
-    int left = 0;
-    int right = size - 1;
+    int start = 0;
+    int end = size - 1;
 
-    while (left <= right)
+    while (start <= end)
     {
-        int mid = (left + right) / 2;
+        int mid = (start + end) / 2;
 
-        if (target < arr[mid])
+        if (arr[mid] < target)
         {
-            right = mid - 1;
+            start = mid + 1;
         }
-        else if (target > arr[mid])
+        else if (arr[mid] > target)
         {
-            left = mid + 1;
+            end = mid - 1;
         }
+
         else
         {
-            return mid; // Return the index if found
+            return mid;
         }
     }
-
-    return -1; // Return -1 if not found
 }
 
+int binarySearchRecursion(int arr[], int target, int start, int end)
+{
+    if (start > end)
+        return -1;
+    int mid = start + (end - start) / 2;
+    if (arr[mid] == target)
+        return mid;
+    if (arr[mid < target])
+        return binarySearchRecursion(arr, target, mid + 1, end);
+    return binarySearchRecursion(arr, target, start, mid - 1);
+}
 int main()
 {
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     int size = sizeof(arr) / sizeof(arr[0]);
     int target = 9;
 
     int index = binarySearch(arr, size, target);
 
-    cout << index << endl;
-
-    return 0;
+    cout << "The index is " << index;
 }

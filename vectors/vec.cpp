@@ -1,31 +1,12 @@
-#include <iostream>
+#include<iostream>
 #include<vector>
 
 using namespace std;
 
 int main(){
-    // vector<int> vec = {1,2,3,4,5};
-    // cout<<vec[0];
-    // // return 0 ; 
-
-    vector <char> arr = {'a', 'b', 'c', 'd', 'e'};
-
-    // Size of a vector
-    cout<<"Size is: "<< arr.size()<<endl;
-
-    arr.push_back('2');
-
-    arr.pop_back();
+    vector<int> vec = {1, 1, 2, 2, 3, 3, 4, 4, 5, 6, 6, 7, 7};
 
 
-    cout<<arr.front();
-    cout<<arr.at(3);
-
-
-    for(char val : arr){
-        cout<<val<<endl;
-    }
-
-    return 0;
+    // Single number
+     
 }
-

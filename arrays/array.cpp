@@ -1,21 +1,15 @@
-#include <iostream>
+#include<iostream>
 
 using namespace std;
 
-int main()
-{
-    int arr[] = {6,56,436,57,436,67,346,658,34,476,89};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    int maxI = 0;
+int linearSearch(int arr[], int size, int target){
+    
+}
 
-    int i;
-    for (i = 1; i < size; i++)
-    {
-        if (arr[i] > arr[maxI])
-        {
-            maxI = i;
-        }
-    }
+int main(){
+    int arr[] = {1,2,3,4,5,6,7,8,9};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    int target = 8;
 
-    cout<<"The largest element is :"<<arr[maxI]<<endl;
+
 }

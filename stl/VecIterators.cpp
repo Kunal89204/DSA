@@ -7,7 +7,9 @@ int main()
 {
     vector<int> vec = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    vector<int>::iterator it;
+    vector<int>::iterator it = vec.begin();
+
+    cout << *it;
 
     for (it = vec.begin(); it != vec.end(); it++)
     {

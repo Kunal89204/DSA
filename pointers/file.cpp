@@ -1,8 +1,7 @@
 #include<iostream>
-#include<vector>
 
 using namespace std;
 
 int main(){
-    cout<<"Hello world";
+    int a = 10;
 }
