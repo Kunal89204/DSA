@@ -1,46 +1,51 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 int binarySearch(int arr[], int size, int target)
 {
-    int left = 0;
-    int right = size - 1;
+    int start = 0;
+    int end = size - 1;
 
-    while (left <= right)
+    while (start <= end)
     {
-        int mid = left + (right - left) / 2;
-        if (arr[mid] == target)
+        int mid = (start + end) / 2;
+
+        if (arr[mid] < target)
+        {
+            start = mid + 1;
+        }
+        else if (arr[mid] > target)
+        {
+            end = mid - 1;
+        }
+
+        else
         {
             return mid;
         }
-        else if (arr[mid] < target)
-        {
-            left = mid + 1;
-        }
-        else
-        {
-            left = mid - 1;
-        }
     }
-
-    return -1;
 }
 
+int binarySearchRecursion(int arr[], int target, int start, int end)
+{
+    if (start > end)
+        return -1;
+    int mid = start + (end - start) / 2;
+    if (arr[mid] == target)
+        return mid;
+    if (arr[mid < target])
+        return binarySearchRecursion(arr, target, mid + 1, end);
+    return binarySearchRecursion(arr, target, start, mid - 1);
+}
 int main()
 {
-    int arr[] = {32, 43564, 65, 5, 54, 676, 546, 6, 5, 543, 56, 46};
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     int size = sizeof(arr) / sizeof(arr[0]);
-    int target = 32;
+    int target = 9;
 
     int index = binarySearch(arr, size, target);
 
-    if (index != -1)
-    {
-        cout << "Element found at index:" << index << endl;
-    }
-    else
-    {
-        cout<<"Element not found" << endl;
-    }
+    cout << "The index is " << index;
 }

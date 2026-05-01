@@ -1,53 +1,40 @@
-#include <iostream>
+#include<iostream>
+
 using namespace std;
 
-class Stack {
-    int top;
-    int arr[100]; // Maximum size of stack
+#define n 20;
 
-public:
-    Stack() {
-        top = -1; // Initialize stack as empty
+class Queue{
+    int* arr;
+    int front;
+    int back;
+
+    public:
+    Queue() {
+        arr = new int[n];
+        front = -1;
+        back = -1;
     }
 
-    void push(int x) {
-        if (top >= 99) {
-            cout << "Stack Overflow!" << endl;
+    void push(int x){
+        if(back == n-1){
+            cout<<"Queue is empty!"<<endl;
+        }
+
+        if(front == -1){
+            front = 0;
+        }
+
+        back++;
+        arr[back] = x;
+    }
+
+    void pop(){
+        if(front == -1){
+            cout<<"Queue is empty!"<<endl;
             return;
         }
-        arr[++top] = x;
-    }
 
-    void pop() {
-        if (top < 0) {
-            cout << "Stack Underflow!" << endl;
-            return;
-        }
-        top--;
-    }
-
-    int peek() {
-        if (top < 0) {
-            cout << "Stack is empty!" << endl;
-            return -1;
-        }
-        return arr[top];
-    }
-
-    bool isEmpty() {
-        return top < 0;
+        front++;
     }
 };
-
-int main() {
-    Stack myStack;
-
-    myStack.push(10);
-    myStack.push(20);
-    cout << "Top element: " << myStack.peek() << endl; // 20
-
-    myStack.pop();
-    cout << "Top element after popping: " << myStack.peek() << endl; // 10
-
-    return 0;
-}

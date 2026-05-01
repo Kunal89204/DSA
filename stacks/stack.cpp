@@ -1,42 +1,50 @@
-// #include <iostream>
-// #include <stack>
-// using namespace std;
-
-// int main()
-// {
-//     stack<int> myStack;
-
-//     myStack.push(10);
-//     myStack.push(20);
-//     myStack.push(30);
-//     myStack.push(40);
-
-//     cout << "Top element: " << myStack.top() << endl;
-
-//     myStack.pop();
-//     cout << "After popping, top element: " << myStack.top() << endl; // 20
-
-//     if (myStack.empty())
-//     {
-//         cout << "Stack is empty!" << endl;
-//     }
-//     else
-//     {
-//         cout << "stack is not empty" << endl;
-//     }
-// }
-
-
-#include<iostream>
-#include<stack>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
-int main(){
+class Stack
+{
+    vector<int> v;
 
-    stack<int> myStack;
+public:
+    void push(int val)
+    {
+        v.push_back(val);
+    };
 
-    myStack.push(10);
+    void pop()
+    {
+        v.pop_back();
+    };
 
-    cout<<myStack.top();
+    int top()
+    {
+        return v[v.size() - 1];
+    };
+
+    bool empty()
+    {
+
+        return v.empty();
+    };
+};
+
+int main()
+{
+
+    Stack s;
+
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    s.push(40);
+
+    while (!s.empty())
+    {
+        cout << "Top is " << s.top() << ' ';
+        s.pop();
+    }
+
+    return 0;
 }

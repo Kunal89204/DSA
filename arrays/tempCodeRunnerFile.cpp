@@ -1,0 +1,1 @@
+ut << sizeof(arr)<<endl;

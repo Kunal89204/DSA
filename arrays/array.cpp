@@ -1,19 +1,15 @@
-#include <iostream>
+#include<iostream>
 
 using namespace std;
 
-int main()
-{
-    int numbers[] = {1, 5, 6, 7, 2, 3, 4};
-    int maxElement = 0;
-    int size = sizeof(numbers) / sizeof(numbers[0]);
+int linearSearch(int arr[], int size, int target){
+    
+}
 
-    for (int i = 1; i < size; i++)
-    {
-        if (numbers[i] > maxElement)
-        {
-            maxElement = numbers[i];
-        }
-    }
-    cout << "The maximum element in the array is: " << maxElement << endl;
+int main(){
+    int arr[] = {1,2,3,4,5,6,7,8,9};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    int target = 8;
+
+
 }
