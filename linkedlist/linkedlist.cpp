@@ -13,3 +13,9 @@ public:
         next = nullptr;
     }
 };
+
+int main(){
+    Node list;
+
+    
+}
