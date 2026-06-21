@@ -4,34 +4,35 @@
 using namespace std;
 
 class Teacher
-{    
-    // properties
-private:
+{
+public:
     string name;
+    string batch;
+
+    Teacher()
+    {
+        cout << "I ran first, rest later" << endl;
+    }
+
+    // Get salary
+    double returnSalary()
+    {
+        return salary;
+    }
+
+    // Set Salary
+    void setSalary(double s)
+    {
+        this->salary = s;
+    }
+
+private:
     double salary;
-    string subject;
-
-    void printName()
-    {
-        cout << this->name;
-    }
-
-public:
-    string department;
-
-    // methods
-public:
-    void changeDepartment(string newDep)
-    {
-        department = newDep;
-    }
 };
 
 int main()
 {
     Teacher t1;
-    t1.changeDepartment("Kanji");
-    cout << t1.department;
-
-    return 0;
+    t1.setSalary(20000);
+    cout << t1.returnSalary();
 }

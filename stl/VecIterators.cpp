@@ -5,17 +5,14 @@ using namespace std;
 
 int main()
 {
-    vector<int> vec = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    vector<pair<int, int>> vec = {{1, 2}, {2, 3}, {4, 5}};
+    pair<int, pair<int, int>> p = {3, {4, 5}};
 
-    vector<int>::iterator it = vec.begin();
+    cout << p.first << endl;
+    cout << p.second.second << endl;
 
-    cout << *it;
-
-    for (it = vec.begin(); it != vec.end(); it++)
+    for (pair<int, int> x : vec)
     {
-        cout << *(it) << " ";
+        cout << x.first << endl;
     }
-
-    cout << endl;
-    return 0;
 }

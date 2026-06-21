@@ -5,26 +5,16 @@ using namespace std;
 
 int main()
 {
-    vector<int> vec = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    vector<int> vec;
 
-    cout << "Size of the vector is" << " " << vec.size() << endl;
+    vec.push_back(1);
+    vec.push_back(2);
+    vec.push_back(2);
 
-    // Looping through the vector
-    for (int val : vec)
+    for (int i = 0; i < vec.size() - 1; i++)
     {
-        cout << val << endl;
+        cout << vec[i] << endl;
     }
-
-    // Modifiers
-    vec.push_back(20);
-    vec.pop_back();
-
-    cout << vec.at(4) << endl;
-    cout << vec.front() << endl;
-    cout << vec.back() << endl;
-    cout << vec.data() << endl;
-    cout << vec.empty() << endl;
-
-    // Iterators
-    vec.begin();
+    cout << vec.size() << endl;
+    cout << vec.capacity() << endl;
 }

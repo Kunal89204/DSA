@@ -16,6 +16,7 @@ void twoSum(const vector<int>& vec, int target)
                 cout << i << endl
                      << j << endl
                      << "And the value is gotcha" << vec[i] + vec[j];
+                     return;
             }
             else
             {

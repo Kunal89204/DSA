@@ -6,6 +6,7 @@
 using namespace std;
 
 int main()
+
 {
     list<int> l;
     deque<int> d;
