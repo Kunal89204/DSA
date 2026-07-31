@@ -4,30 +4,34 @@
 
 using namespace std;
 
-vector<int> twoSums(const vector<int> &nums, int target)
+
+vector<int> twoSumMap(const vector<int> &nums, int target)
 {
     unordered_map<int, int> seen;
 
     for (int i = 0; i < nums.size(); i++)
     {
+
         int compliment = target - nums[i];
 
         if (seen.find(compliment) != seen.end())
         {
-            return {seen[compliment], i};
+            return { seen[compliment], i };
         }
 
         seen[nums[i]] = i;
     }
+
     return {};
 }
 
 int main()
 {
-    vector<int> arr = {1, 2, 4, 6, 8, 10};
-    int target = 18;
+    vector<int> nums = {1, 3, 5, 7, 9};
+    int target = 16;
 
-    vector<int> val = twoSums(arr, target);
+    vector<int> vals = twoSumMap(nums, target);
 
-    cout << val[0];
+    cout << vals[0];
+    return 0;
 }

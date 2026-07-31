@@ -3,38 +3,28 @@
 
 using namespace std;
 
-void twoSum(const vector<int>& vec, int target)
+vector<int> twoSum(const vector<int> &nums, int target)
 {
-    for (int i = 0; i < vec.size(); i++)
+    for (int i = 0; i < nums.size() - 1; i++)
     {
-        cout << "Fist loop" << i << endl;
-        for (int j = i + 1; j < vec.size(); j++)
+        for (int j = i + 1; j < nums.size(); j++)
         {
-            cout << "Second loop" << j << endl;
-            if (vec[i] + vec[j] == target)
+            if (nums[i] + nums[j] == target)
             {
-                cout << i << endl
-                     << j << endl
-                     << "And the value is gotcha" << vec[i] + vec[j];
-                     return;
-            }
-            else
-            {
-                cout << "not found" << i << endl
-                     << j << endl
-                     << "And the value is" << vec[i] + vec[j];
-                ;
-                ;
+                return {i, j};
             }
         }
     }
+    return {};
 }
 
 int main()
 {
-    vector<int> arr = {1, 2, 3, 4, 5, 6, 67, 8};
-    int target = 7;
-    ;
+    vector<int> arr = {1, 3, 5, 7, 8, 10};
+    int target = 18;
 
-    twoSum(arr, target);
+    vector<int> val = twoSum(arr, target);
+
+    cout << val[0] << endl
+         << val[1];
 }
