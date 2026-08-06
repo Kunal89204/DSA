@@ -1,32 +1,27 @@
-const arr = [4, 5, 6, 7, 8, 9, 0, 1, 2, 3]
-let target = 2;
+const { performance } = require("perf_hooks");
 
-const roatetdArr = (arr, target) => {
-    let left = 0;
-    let right = arr.length - 1;
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let k = 1000000;
 
-    while (left <= right) {
-        let mid = Math.floor(left + (right - left) / 2);
+function rotate(arr, k) {
+    let n = arr.length;
 
-        if (arr[mid] === target) {
-            return mid;
+    while (k--) {
+        let lastEl = arr[n - 1];
+
+        for (let i = n - 1; i > 0; i--) {
+            arr[i] = arr[i - 1];
         }
 
-        if (arr[left] <= arr[mid]) {
-            if (arr[left] <= target && target < arr[mid]) {
-                right = mid - 1;
-            } else {
-                left = mid + 1;
-            }
-        } else {
-            if (arr[mid] < target && target <= arr[right]) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
+        arr[0] = lastEl;
     }
-    return -1;
 }
 
-console.log(roatetdArr(arr, target))
+const start = performance.now();
+
+rotate(arr, k);
+
+const end = performance.now();
+
+console.log(arr);
+console.log(`Execution Time: ${(end - start).toFixed(6)} ms`);

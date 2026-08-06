@@ -10,16 +10,21 @@ void maxProfit(const vector<int> &nums)
     for (int i = 1; i < nums.size(); i++)
     {
 
-        int cost = nums[i] - minValue;
-        maxProfit = max(maxProfit, cost);
-        minValue = min(minValue, nums[i]);
-        cout << minValue;
+        if (nums[i] > minValue)
+        {
+            maxProfit = max(maxProfit, nums[i] - minValue)
+        }
+        minValue = min(nums[i], minValue);
     }
+
+    return maxProfit;
 }
 
 int main()
 {
     vector<int> vec = {7, 1, 3, 6, 4, 2};
 
-    maxProfit(vec);
+    bestBuy(vec);
+
+    // maxProfit(vec);
 }
